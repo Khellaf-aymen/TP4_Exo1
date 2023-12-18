@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class TpH {
-	public static void main(String[] arguments) {  //args est un tableau de cha�nes de caract�res
+	public static void main(String[] args) {  
 
 
 		

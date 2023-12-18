@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Enseignant extends Personne implements Comparable{
+public class Enseignant extends Personne implements Comparable<Enseignant>{
 	private static ArrayList<Enseignant> ens = new  ArrayList<Enseignant>()  ;
 
 	int nbHeures;
@@ -28,10 +28,12 @@ public class Enseignant extends Personne implements Comparable{
 		modules.add(module);
 	}
 
-
 	@Override
-	public int compareTo(Object o) {
-		return nom.compareTo(((Enseignant)o).nom);
+	public int compareTo(Enseignant o) {
+		return nom.compareTo(o.nom);
 	}
+
+
+	
 	
 }
