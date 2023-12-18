@@ -12,12 +12,12 @@ public class TpH {
 		Enseignant[] tabe = new Enseignant[3] ;
 		Etudiant[] tabetu =new Etudiant[3] ;
 		
-		tabe[0] = new Enseignant("Elio", "Goettelmann", 29, 8);
-		tabe[1] = new Enseignant("Aymen", "Braun", 42, 11);
-		tabe[2] = new Enseignant("Richard", "Braun", 42, 11);
-		tabetu[0] = new Etudiant("Pedri", "Rodriguez", 31, 65424);
-		tabetu[1] = new Etudiant("Sergio", "Roberto", 25, 35652);
-		tabetu[2] = new Etudiant("Claude", "Godart", 27, 75421);
+		tabe[0] = new Enseignant("tboun", "rayas", 29, 8);
+		tabe[1] = new Enseignant("hadaf", "Rodriguez",20, 11);
+		tabe[2] = new Enseignant("hadad", "DeBraun", 42, 11);
+		tabetu[0] = new Etudiant("khellaf", "Aymen", 20, 65424);
+		tabetu[1] = new Etudiant("Roberto", "Costa", 21, 35652);
+		tabetu[2] = new Etudiant("bennacer", "Tarek", 24, 75421);
 	
 			
 			Arrays.sort(tabetu);
