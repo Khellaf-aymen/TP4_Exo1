@@ -1,30 +1,37 @@
+import java.util.ArrayList;
 
+public class Enseignant extends Personne implements Comparable{
+	private static ArrayList<Enseignant> ens = new  ArrayList<Enseignant>()  ;
 
-public class Enseignant extends Personne {
-	
 	int nbHeures;
-	String module;
+	ArrayList<String> modules;
 	
-	public Enseignant(String nom, String prenom, int age, int nbHeure, String module) {
+	public Enseignant(String nom, String prenom, int age, int nbHeure) {
 		super(nom, prenom, age);		
 		this.nbHeures = nbHeure;
-		this.module = module;
+		this.modules =new ArrayList<String>();
+		ens.add(this); 
+
 	}
 	
 	@Override
-	public void afficher() {
-		System.out.print("Nom = "+nom);
-		System.out.print("    Prenom = "+prenom);
-		System.out.print("    Age = "+age);		
-		System.out.print("    Nombre d'heures = "+nbHeures);		
-		System.out.println("    Module = "+module);		
-		System.out.println("  ************  ");		
+	public String toString() {
+
+		return ("Nom = "+nom) +("\nPrenom = "+prenom)+ ("\nAge = "+age) + ("Nombre d'heures = "+nbHeures)+("Module = ");	
 	}
 
 	@Override
-	void stocker() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'stocker'");
+	void stocker() 	{
+
+	}
+	void affecterModules(String module){
+		modules.add(module);
+	}
+
+
+	@Override
+	public int compareTo(Object o) {
+		return nom.compareTo(((Enseignant)o).nom);
 	}
 	
 }

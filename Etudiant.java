@@ -1,18 +1,33 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+public class Etudiant extends Personne implements Comparable {
+	private static ArrayList<Etudiant> etds = new  ArrayList<Etudiant>()  ;
 
-public class Etudiant extends Personne {
+
+
+	Scanner in =new Scanner(System.in);
+
+
 	int matricule;
 	//int [] notes = new int[8];
 	ArrayList<Integer> notes=new ArrayList<Integer>();
-	float moyenne;
+
 	
-	public Etudiant(String nom, String prenom, int age, int matricule, ArrayList notes) {
+	public Etudiant(String nom, String prenom, int age, int matricule) {
 		super(nom, prenom, age);
 		this.matricule = matricule;
-		this.notes = notes;
-		moyenne = calculMoyenne();
+		etds.add(this); 
+
 	}
+
+void  RemplirNotes() {
+	for (int i = 0 ; i<5 ; i++){
+System.out.println("enter "+i+ "mark :");
+notes.add(in.nextInt());
+}
 	
+}
+
 	public float calculMoyenne() {
 		float total=0;
 		for (int i=0; i<8; i++) {
@@ -21,24 +36,31 @@ public class Etudiant extends Personne {
 		return total/8;
 	}
 	
+	
 	@Override
-	public void afficher() {
-		System.out.print("Nom = "+nom);
-		System.out.print("    Prenom = "+prenom);
-		System.out.print("    Age = "+age);		// On peut utiliser super.afficher() pour le nom, pr�nom et age
-		System.out.print("    Matricule = "+matricule);
-		System.out.print("    Notes: ");
-		for (int i=0; i<notes.size(); i++) {
-			System.out.print(notes.get(i)+" ");
+	void stocker() {
+		
+	}
+
+	double CalculMoyenne(){
+		double moy = 0 ;
+		for(int i = 0 ; i<notes.size();i++)
+		{
+			moy = moy +(notes.get(i)/5);
 		}
-		System.out.println("    Moyenne = "+ moyenne);
-		System.out.println("  ************  ");		
+		return moy ; 
 	}
 
 	@Override
-	void stocker() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'stocker'");
+	public int compareTo(Object o) {
+		if (this.age ==((Etudiant)o).age) {return 0 ;}
+		else if (this.age >((Etudiant)o).age){return 1;}
+		else return -1 ;  
+	}
+	@Override
+	public String toString() {
+		
+		return ("Nom = "+nom) +("\nPrenom = "+prenom)+ ("\nAge = "+age);
 	}
 }
 		

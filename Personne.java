@@ -15,14 +15,13 @@ public abstract class Personne {
 
 
 	abstract void stocker();
-	public void afficher() {
-		System.out.print("Nom = "+nom);
-		System.out.print("    Prenom = "+prenom);
-		System.out.println("    Age = "+age);		
+	/*@Override
+	public String toString() {
+	return ("Nom = "+nom) +("\nPrenom = "+prenom)+ ("\nAge = "+age);
 		
-	}
-
-	public static void affich_nbr_personnes() {
-		System.out.println("Nombres de personnes crees: "+nbr_personne);
-	}
-}
+	}*/
+	
+		 
+	
+    
+}                
